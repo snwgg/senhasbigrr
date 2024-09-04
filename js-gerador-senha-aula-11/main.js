@@ -61,6 +61,14 @@ function geraSenha() {
     classificaSenha(alfabeto.length);
 }
 
+const botaoCopiarSenha = document.getElementById('copiar-senha');
+botaoCopiarSenha.onclick = () => {
+    const senha = campoSenha.value;
+    navigator.clipboard.writeText(senha).then(() => {
+        alert('Senha copiada!');
+    });
+};
+
 
 function classificaSenha(tamanhoAlfabeto) {
     let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
